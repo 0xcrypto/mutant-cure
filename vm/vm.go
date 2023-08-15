@@ -50,7 +50,6 @@ func (vm *VM) Run() error {
 	var ip int
 	var ins code.Instructions
 	var op code.Opcode
-
 	for vm.currentFrame().ip < len(vm.currentFrame().Instructions())-1 {
 		vm.currentFrame().ip++
 
@@ -471,6 +470,7 @@ func (vm *VM) buildHash(startIndex, endIndex int) (object.Object, error) {
 	return &object.Hash{Pairs: hashedPairs}, nil
 }
 
+func (vm *VM) CurrentFrame() *Frame { return vm.frames[vm.frameIndex-1] }
 func (vm *VM) currentFrame() *Frame { return vm.frames[vm.frameIndex-1] }
 func (vm *VM) pushFrame(f *Frame) {
 	vm.frames[vm.frameIndex] = f

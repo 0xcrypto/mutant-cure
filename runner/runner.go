@@ -32,6 +32,10 @@ func Run(srcpath string) (error, errrs.ErrorType) {
 	return runvm(bytecode)
 }
 
+func Decode(data []byte) (*compiler.ByteCode, error) {
+	return decode(data)
+}
+
 func decode(data []byte) (*compiler.ByteCode, error) {
 	decodedData, err := decryptCode(data)
 	if err != nil {
