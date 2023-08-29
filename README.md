@@ -1,6 +1,9 @@
-This repo contains the source code of mutant language with the source code of the deobfuscator. Run it with
+A deobfuscator for Mutant Programming Language.
+
+## Usage
 
 ```
+git clone https://github.com/0xcrypto/mutant-cure
 cd mutant
 go run deobfuscate-mutant.go
 ```
